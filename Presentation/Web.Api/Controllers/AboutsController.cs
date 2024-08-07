@@ -1,0 +1,72 @@
+﻿using Application.Features.CQRS.Commands.AboutCommands;
+using Application.Features.CQRS.Handlers.AboutHandlers;
+using Application.Features.CQRS.Queries.AboutQueries;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Web.Api.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class AboutsController : ControllerBase
+    {
+
+        private readonly CreateAboutCommandHandler _createCommandHandler;
+        private readonly GetAboutByIdQueryHandler _getAboutByIdQueryHandler;
+        private readonly GetAboutQueryHandler _getAboutQueryHandler;
+        private readonly UpdateAboutCommandHandler _updateAboutCommandHandler;
+        private readonly RemoveAboutCommandHandler _removeAboutCommandHandler;
+
+        public AboutsController(CreateAboutCommandHandler createCommandHandler, GetAboutByIdQueryHandler getAboutByIdQueryHandler, GetAboutQueryHandler getAboutQueryHandler, UpdateAboutCommandHandler updateAboutCommandHandler, RemoveAboutCommandHandler removeAboutCommandHandler)
+        {
+            _createCommandHandler = createCommandHandler;
+            _getAboutByIdQueryHandler = getAboutByIdQueryHandler;
+            _getAboutQueryHandler = getAboutQueryHandler;
+            _updateAboutCommandHandler = updateAboutCommandHandler;
+            _removeAboutCommandHandler = removeAboutCommandHandler;
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> AboutList()
+        {
+            var values = await _getAboutQueryHandler.Handle();
+            return Ok(values);
+        }
+
+
+        [HttpGet]
+        [Route("Id {id}")]
+
+        public async Task<IActionResult> GetAboutById(int id)
+        {
+            var values = await _getAboutByIdQueryHandler.Handle(new GetAboutByIdQuery(id));
+            return Ok(values);
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateAbout(CreateAboutCommand command)
+        {
+            await _createCommandHandler.Handle(command);
+            return Ok("hakkinda bilgisi eklendi");
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> RemoveAbout(int id)
+        {
+            await _removeAboutCommandHandler.Handle(new RemoveAboutCommand(id));
+            return Ok("silme islemi basarili");    
+        }
+
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateAbout(UpdateAboutCommand command)
+        {
+            await _updateAboutCommandHandler.Handle(command);
+            return Ok("Hakkimda bilgisi guncellendi");
+        }
+
+
+    }
+}

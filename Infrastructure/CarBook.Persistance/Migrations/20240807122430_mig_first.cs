@@ -5,7 +5,7 @@
 namespace CarBook.Persistance.Migrations
 {
     /// <inheritdoc />
-    public partial class mig_first1 : Migration
+    public partial class mig_first : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
