@@ -14,7 +14,7 @@ namespace Application.Features.CQRS.Handlers.AboutHandlers
         private readonly IRepository<About> _repository;
 
         public GetAboutQueryHandler(IRepository<About> repository)
-        {
+        { 
             _repository = repository;
         }
 
