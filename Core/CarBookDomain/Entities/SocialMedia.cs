@@ -8,7 +8,7 @@ namespace CarBookDomain.Entities
 {
     public class SocialMedia
     {
-        public int  SocialİMediaID { get; set; }
+        public int  SocialMediaID { get; set; }
         public string Name { get; set; }
         public string Url { get; set; }
         public string Icon {  get; set; }
