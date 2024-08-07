@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{4EE010E1-C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarBookDomain", "Core\CarBookDomain\CarBookDomain.csproj", "{0AAD8949-29EB-443D-890D-9F6DDBEE8BDB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{D89AEF3B-384E-4030-BE3A-99D31D983970}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarBook.Persistance", "Infrastructure\CarBook.Persistance\CarBook.Persistance.csproj", "{0FE89533-44F0-47A6-894B-F70E21F3D139}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +21,17 @@ Global
 		{0AAD8949-29EB-443D-890D-9F6DDBEE8BDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AAD8949-29EB-443D-890D-9F6DDBEE8BDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AAD8949-29EB-443D-890D-9F6DDBEE8BDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FE89533-44F0-47A6-894B-F70E21F3D139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FE89533-44F0-47A6-894B-F70E21F3D139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FE89533-44F0-47A6-894B-F70E21F3D139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FE89533-44F0-47A6-894B-F70E21F3D139}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0AAD8949-29EB-443D-890D-9F6DDBEE8BDB} = {4EE010E1-C12B-4398-810F-24AAE72C1FE2}
+		{0FE89533-44F0-47A6-894B-F70E21F3D139} = {D89AEF3B-384E-4030-BE3A-99D31D983970}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1678A386-CBF4-4D12-A988-6068C519AE1C}
