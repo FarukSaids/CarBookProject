@@ -19,7 +19,7 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup> 
     <ProjectReference Include="..\..\Core\CarBookDomain\CarBookDomain.csproj" />
   </ItemGroup>
 
