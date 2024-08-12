@@ -1,4 +1,5 @@
 using Application.Features.CQRS.Handlers.AboutHandlers;
+using Application.Features.CQRS.Handlers.BannerHandlers;
 using Application.Features.CQRS.Queries.AboutQueries;
 using Application.Interfaces;
 using CarBook.Persistance.Context;
@@ -11,11 +12,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<CarBookContext>();
 builder.Services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
 builder.Services.AddScoped<GetAboutQueryHandler>();
-builder.Services.AddScoped<GetAboutByIdQuery>();
+
 builder.Services.AddScoped<GetAboutByIdQueryHandler>();
 builder.Services.AddScoped<CreateAboutCommandHandler>();
 builder.Services.AddScoped<UpdateAboutCommandHandler>();
 builder.Services.AddScoped<RemoveAboutCommandHandler>();
+
+
+builder.Services.AddScoped<GetBannerByIdQueryHandler>();
+builder.Services.AddScoped<CreateBannerCommandHandler>();
+builder.Services.AddScoped<UpdateBannerCommandHandler>();
+builder.Services.AddScoped<RemoveBannerCommandHandler>();
+builder.Services.AddScoped<GetBannerQueryHandler>();
 
 
 

@@ -35,8 +35,8 @@ namespace Web.Api.Controllers
         }
 
 
-        [HttpGet]
-        [Route("Id {id}")]
+        [HttpGet("{id}")]
+       
 
         public async Task<IActionResult> GetAboutById(int id)
         {
