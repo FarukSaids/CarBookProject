@@ -53,7 +53,7 @@ namespace Web.Api.Controllers
         public async Task<IActionResult> DeleteBanner(int id)
         {
             await _removebannercommandhandler.Handle(new RemoveBannerCommand(id));
-            return Ok("Silme islemi basarili");
+            return Ok("Silme islemi basarili"); 
 
         }
 
