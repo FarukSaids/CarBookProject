@@ -21,17 +21,13 @@ namespace Application.Features.CQRS.Handlers.BannerHandlers
 
         public async Task Handle(UpdateBannerCommand command)
         {
-            var result = _repository.UpdateAsync(new Banner { 
-                Title = command.Title, 
-                BannerID = command.BannerID,
-                Description = command.Description,
-                VideoDescription = command.VideoDescription,
-                VideoUrl= command.VideoUrl, 
+            var values =await _repository.GetByIdAsync(command.BannerID);
 
-
-
-            });
-
+            values.Description=command.Description;
+            values.Title    =command.Title;
+            values.VideoUrl=command.VideoUrl;
+            values.VideoDescription=command.VideoDescription;
+            await _repository.UpdateAsync(values);
 
         }
 
