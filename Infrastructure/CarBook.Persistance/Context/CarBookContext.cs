@@ -10,10 +10,13 @@ namespace CarBook.Persistance.Context
 {
     public class CarBookContext:DbContext
     {
+
+        private readonly string connection1 = "Server=10.6.2.9; initial Catalog = CarBookProjectDb; user Id =faruk; password=faruk123456; TrustServerCertificate=True; ";
+        private readonly string connection2 = "Server=FARUKSAID; initial Catalog = CarBookProjectDb;  TrustServerCertificate=True; Integrated Security=True;";
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=10.6.2.9; initial Catalog = CarBookProjectDb; user Id =faruk; password=faruk123456; TrustServerCertificate=True;  ");
-       }
+            optionsBuilder.UseSqlServer($"{connection2}");
+        }
         public DbSet<About> Abouts { get; set; }
         public DbSet<Banner> Banners { get; set; }
         public DbSet<Brand> Brands { get; set; }

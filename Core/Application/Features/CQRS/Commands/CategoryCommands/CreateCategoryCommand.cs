@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBookDomain.Entities
+namespace Application.Features.CQRS.Commands.CategoryCommands
 {
-    public class Category //blogların kategorisini tutacak
+    public class CreateCategoryCommand
     {
-        public int CategoryID { get; set; }
+      
         public string Name { get; set; }
     }
 }
