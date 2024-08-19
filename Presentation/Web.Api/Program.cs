@@ -2,6 +2,8 @@ using Application.Features.CQRS.Handlers.AboutHandlers;
 using Application.Features.CQRS.Handlers.BannerHandlers;
 using Application.Features.CQRS.Handlers.BrandHandlers;
 using Application.Features.CQRS.Handlers.CarHandlers;
+using Application.Features.CQRS.Handlers.CategoryHandlers;
+using Application.Features.CQRS.Handlers.ContactHandlers;
 using Application.Features.CQRS.Queries.AboutQueries;
 using Application.Interfaces;
 using Application.Interfaces.CarInterfaces;
@@ -42,6 +44,25 @@ builder.Services.AddScoped<UpdateCarCommandHandler>();
 builder.Services.AddScoped<RemoveCarCommandHandler>();
 builder.Services.AddScoped<GetCarQueryHandler>();
 builder.Services.AddScoped<GetCarWithBrandQueryHandler>();
+
+builder.Services.AddScoped<GetCategoryQueryHandler>();
+builder.Services.AddScoped<GetCategoryByIdQueryHandler>();
+builder.Services.AddScoped<CreateCategoryCommandHandler>();
+builder.Services.AddScoped<UpdateCategoryCommandHandler>();
+builder.Services.AddScoped<RemoveCategoryCommandHandler>();
+
+
+builder.Services.AddScoped<GetContactByIdQueryHandler>();
+builder.Services.AddScoped<GetContactQueryHandler>();
+builder.Services.AddScoped<CreateContactCommandHandler>();
+builder.Services.AddScoped<RemoveContactCommandHandler>();
+builder.Services.AddScoped<UpdateContactCommandHandler>();
+
+
+
+
+
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
